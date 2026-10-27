@@ -19,13 +19,8 @@ export const clientKeys = [
   "common",
   "nav",
   "booking",
-  "bookingFlow",
-  "bookingStatus",
   "contactForm",
   "vehicleClass",
-  "vehicleFeature",
-  "paymentMethod",
-  "status",
   "states",
   "toast",
 ] as const satisfies readonly (keyof Dictionary)[];

@@ -23,7 +23,7 @@ const legal = {
       {
         title: "How we use your information",
         paragraphs: [
-          "To provide fare estimates, arrange and manage your rides, and communicate with you about your bookings.",
+          "To arrange and manage your rides, and to communicate with you about your bookings, including on WhatsApp.",
           "To respond to your questions and requests, and to improve the safety and quality of our services.",
           "To comply with legal obligations that apply to us.",
         ],
@@ -81,15 +81,15 @@ const legal = {
       {
         title: "Bookings",
         paragraphs: [
-          "A booking is confirmed once you receive a booking reference. You are responsible for providing accurate pickup, destination, timing and contact details.",
+          "Booking requests are sent to us on WhatsApp. A booking is confirmed once our team confirms it with you. You are responsible for providing accurate pickup, destination, timing and contact details.",
           "For scheduled rides, please be ready at the pickup location at the agreed time.",
         ],
       },
       {
         title: "Fares and payment",
         paragraphs: [
-          "Fares shown before booking are estimates. The final fare may vary due to waiting time, added stops, route changes, tolls or other factors described at the time of booking.",
-          "Accepted payment methods are shown when you confirm your booking.",
+          "The website does not calculate or collect fares. Our team confirms the fare with you before your ride; it may change only if the trip changes, for example due to waiting time, added stops or route changes.",
+          "Accepted payment methods are confirmed by our team when they reply to your request.",
         ],
       },
       {

@@ -1,9 +1,14 @@
-# Masar — Taxi platform frontend
+# Masar — Taxi website
 
 Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind CSS 4 · Arabic (RTL) and English (LTR).
 
+An informational website with no backend. The booking form and the contact form do not store or price
+anything: they open WhatsApp with the visitor's details prefilled, addressed to the business number, and
+customer service replies there manually with availability and the fare.
+
 > "Masar" is a working name. All business contact details are placeholders and are rendered with a visible
-> "Placeholder" label. Bookings, quotes and contact messages run against a **mock service layer** — no backend.
+> "Placeholder" label. **Set the real WhatsApp number in `src/config/brand.ts` before launch** — every booking
+> request is sent to `brand.contact.whatsapp.href`.
 
 ## Commands
 
@@ -12,9 +17,9 @@ Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind CSS 4 · Ara
 | `npm run dev` | Development server on http://localhost:3000 |
 | `npm run lint` | ESLint |
 | `npm run typecheck` | Generate route types, then `tsc --noEmit` |
-| `npm test` | Unit tests (Vitest) — booking domain logic and mock services |
+| `npm test` | Unit tests (Vitest) — WhatsApp message builder |
 | `npm run build` | Production build |
-| `npm run test:e2e` | End-to-end tests (Playwright, local Chrome) — run `npm run build` first |
+| `npm run test:e2e` | End-to-end tests (Playwright, local Chrome) |
 | `npm run check` | lint + typecheck + unit tests + build |
 
 ## Structure
@@ -23,35 +28,22 @@ Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind CSS 4 · Ara
 src/
   app/
     [lang]/               root layout per locale (<html lang dir>)
-      (site)/             public website: home, services, fleet, airport, about, contact, faq, legal
-        book/             booking wizard
-        bookings/[ref]/   booking status
-        design-system/    component showcase (noindex)
+      (site)/             home, services, fleet, airport, about, contact, faq, legal
+        book/             booking request form (sent on WhatsApp)
     sitemap.ts, robots.ts, icon.svg
   proxy.ts                redirects "/" to the preferred locale (cookie → Accept-Language)
   components/
-    ui/                   design-system primitives (button, field, input, modal, toast, …)
+    ui/                   design-system primitives (button, field, input, toast, …)
     layout/               header, footer, mobile nav, locale switcher
     marketing/            page sections shared by public pages
-    booking/              booking widget, wizard steps, status view, route preview
-  features/booking/       pure booking domain: draft model, validation, status lifecycle, API mapping
-  services/
-    contracts/            service interfaces — the only data API the UI uses
-    mock/                 in-memory implementation (+ demo status simulator)
-  mocks/fixtures/         demo data (places, vehicles, drivers, bookings)
-  types/                  domain models (Booking, Driver, Vehicle, Customer, FareQuote, Trip, Payment, …)
+    booking/              booking request form
+    contact/              contact form (sent on WhatsApp)
+  lib/whatsapp.ts         builds the prefilled WhatsApp message and wa.me link
   i18n/                   locale config and dictionaries (en / ar)
-  config/brand.ts         brand name and business details (placeholders)
+  config/brand.ts         brand name and business details, including the WhatsApp number (placeholders)
+  config/fleet.ts         vehicle categories shown on the site (no prices)
   app/globals.css         design tokens (palette → semantic → Tailwind theme)
 ```
-
-## Connecting the Laravel API
-
-1. Implement `Services` from `src/services/contracts` in `src/services/api/` (map snake_case ↔ camelCase there).
-2. Add an `"api"` case in `src/services/index.ts` and set `NEXT_PUBLIC_DATA_SOURCE=api`.
-3. `demoSimulator` becomes `null`; the status page hides its demo controls automatically.
-
-UI code never imports from `services/mock` or `mocks/` for data access, so no component changes are needed.
 
 ## Rebranding
 

@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const pages = ["/", "/services", "/fleet", "/airport-transfers", "/about", "/contact", "/faq", "/privacy", "/terms", "/book", "/design-system"];
+const pages = ["/", "/services", "/fleet", "/airport-transfers", "/about", "/contact", "/faq", "/privacy", "/terms", "/book"];
 
 test.describe("public website", () => {
   for (const locale of ["en", "ar"] as const) {
@@ -10,7 +10,7 @@ test.describe("public website", () => {
         expect(response?.status()).toBe(200);
         await expect(page.locator("html")).toHaveAttribute("dir", locale === "ar" ? "rtl" : "ltr");
         await expect(page.locator("h1").first()).toBeVisible();
-        await expect(page).toHaveTitle(/Masar|مسار/);
+        await expect(page).toHaveTitle(/Zacks|زاكس/);
       });
     }
   }
@@ -30,21 +30,28 @@ test.describe("public website", () => {
     await expect(page.getByRole("heading", { name: "We couldn't find that page" })).toBeVisible();
   });
 
-  test("contact form validates and submits to the mock service", async ({ page }) => {
+  test("contact form validates and opens WhatsApp with the message", async ({ page, context }) => {
     await page.goto("/en/contact");
-    await page.getByRole("button", { name: "Send message" }).click();
+    const main = page.getByRole("main");
+    await main.getByRole("button", { name: "Send on WhatsApp" }).click();
     await expect(page.getByText("Enter your name.")).toBeVisible();
-    await page.getByLabel("Full name").fill("Lara Mansour");
-    await page.getByLabel("Email").fill("lara@example.com");
-    await page.getByRole("textbox", { name: "Message", exact: true }).fill("I'd like to arrange regular airport transfers for our team.");
-    await page.getByRole("checkbox").check();
-    await page.getByRole("button", { name: "Send message" }).click();
-    await expect(page.getByText("Message sent")).toBeVisible();
+    await main.getByLabel("Full name").fill("Lara Mansour");
+    await main.getByRole("textbox", { name: "Message", exact: true }).fill("Regular airport transfers for our team, please.");
+    await context.route("https://wa.me/**", (route) => route.fulfill({ contentType: "text/html", body: "WhatsApp" }));
+    const popup = context.waitForEvent("page");
+    await main.getByRole("button", { name: "Send on WhatsApp" }).click();
+    const opened = await popup;
+    await opened.waitForURL(/^https:\/\/wa\.me\//);
+    const url = decodeURIComponent(opened.url());
+    expect(url).toContain("Lara Mansour");
+    expect(url).toContain("Regular airport transfers");
   });
 
-  test("placeholder contact details are labelled", async ({ page }) => {
+  test("contact page shows the business details", async ({ page }) => {
     await page.goto("/en/contact");
-    await expect(page.getByRole("main").getByText("Placeholder").first()).toBeVisible();
-    await expect(page.getByText("These contact details are placeholders")).toBeVisible();
+    const main = page.getByRole("main");
+    await expect(main.getByRole("link", { name: "+961 70 062 162" }).first()).toHaveAttribute("href", "tel:+96170062162");
+    await expect(main.getByRole("link", { name: "info@zacks.taxi" })).toBeVisible();
+    await expect(main.getByText("Damascus Main Road, Aley, Lebanon")).toBeVisible();
   });
 });

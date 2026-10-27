@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Container, Section } from "@/components/ui/layout";
 import { getDictionary, getLocale } from "@/i18n/get-dictionary";
 import { formatNumber } from "@/lib/format";
-import { getVehicleClasses } from "@/lib/data";
+import { vehicleClasses } from "@/config/fleet";
 import { pageMetadata } from "@/lib/metadata";
 
 export async function generateMetadata() {
@@ -21,7 +21,6 @@ export default async function AirportTransfersPage() {
   const locale = await getLocale();
   const dict = await getDictionary(locale);
   const t = dict.pages.airport;
-  const vehicleClasses = await getVehicleClasses();
 
   return (
     <>
@@ -51,7 +50,7 @@ export default async function AirportTransfersPage() {
               <p className="text-muted-foreground">{t.luggage.body}</p>
               <div className="overflow-x-auto rounded-card border border-border bg-surface shadow-card">
                 <table className="w-full min-w-[22rem] text-start text-sm">
-                  <thead className="bg-surface-muted text-xs font-bold tracking-wider text-subtle-foreground uppercase">
+                  <thead className="bg-surface-muted text-xs font-bold tracking-wider text-muted-foreground uppercase">
                     <tr>
                       <th scope="col" className="px-5 py-3 text-start">{t.luggage.vehicleColumn}</th>
                       <th scope="col" className="px-5 py-3 text-start">{t.luggage.passengersColumn}</th>

@@ -22,7 +22,7 @@ export async function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/80 bg-surface/85 backdrop-blur-md supports-[backdrop-filter]:bg-surface/75">
       <Container className="flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
-        <Link href={localizePath("/", locale)} className="rounded-sm" aria-label={dict.nav.home}>
+        <Link href={localizePath("/", locale)} className="rounded-sm">
           <Logo name={dict.meta.siteName} />
         </Link>
 

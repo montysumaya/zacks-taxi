@@ -1,4 +1,4 @@
-import { Info, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { ContactForm } from "@/components/contact/contact-form";
 import { ContactDetails } from "@/components/layout/contact-details";
 import { PageHero } from "@/components/marketing/page-hero";
@@ -30,10 +30,6 @@ export default async function ContactPage() {
             <Card padding="lg" className="flex flex-col gap-5">
               <h2 className="text-h4 font-bold">{t.channelsTitle}</h2>
               <ContactDetails locale={locale} labels={{ ...t, placeholder: dict.common.placeholder }} />
-              <p className="flex gap-2 rounded-md bg-warning-soft p-3 text-sm text-warning-soft-foreground">
-                <Info aria-hidden className="mt-0.5 size-4 shrink-0" />
-                {t.channelsNotice}
-              </p>
             </Card>
 
             <section aria-labelledby="map-heading" className="flex flex-col gap-3">

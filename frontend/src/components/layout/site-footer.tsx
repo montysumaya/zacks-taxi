@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/logo";
 import { Container } from "@/components/ui/layout";
-import { brand } from "@/config/brand";
 import { footerNav, type NavItem } from "@/config/navigation";
 import { localizePath, type Locale } from "@/i18n/config";
 import { getDictionary, getLocale, type Dictionary } from "@/i18n/get-dictionary";
@@ -41,10 +40,10 @@ export async function SiteFooter() {
 
   return (
     <footer className="relative bg-surface-inverse text-surface-inverse-foreground">
-      <div className="h-1 bg-linear-to-r from-accent via-amber-300 to-accent" aria-hidden />
+      <div className="h-1 bg-linear-to-r from-accent via-accent-hover to-accent" aria-hidden />
       <Container className="grid gap-12 py-14 sm:py-16 lg:grid-cols-12">
         <div className="flex flex-col gap-5 lg:col-span-4">
-          <Logo name={dict.meta.siteName} tone="inverse" />
+          <Logo name={dict.meta.siteName} tone="inverse" className="h-16 self-start" />
           <p className="max-w-xs text-[0.9375rem] text-white/65">{dict.footer.tagline}</p>
         </div>
 
@@ -56,7 +55,6 @@ export async function SiteFooter() {
             links={[
               { label: dict.footer.privacy, href: localizePath("/privacy", locale) },
               { label: dict.footer.terms, href: localizePath("/terms", locale) },
-              { label: dict.footer.designSystem, href: localizePath("/design-system", locale) },
             ]}
           />
         </div>
@@ -71,15 +69,6 @@ export async function SiteFooter() {
           />
         </div>
       </Container>
-
-      <div className="border-t border-white/10">
-        <Container className="flex flex-col gap-2 py-6 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {brand.legalName[locale]}. {dict.footer.rights}
-          </p>
-          <p>{dict.footer.placeholderNotice}</p>
-        </Container>
-      </div>
     </footer>
   );
 }

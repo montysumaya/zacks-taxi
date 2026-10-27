@@ -2,10 +2,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 const PORT = 3100;
 
-/**
- * E2E tests run against a fresh production build with the admin prototype
- * enabled (it is disabled in normal production builds — see src/config/features.ts).
- */
+/** E2E tests run against a fresh production build. */
 export default defineConfig({
   testDir: "tests/e2e",
   timeout: 90_000,
@@ -29,7 +26,6 @@ export default defineConfig({
   ],
   webServer: {
     command: `npx next build && npx next start -p ${PORT}`,
-    env: { ADMIN_PROTOTYPE: "true" },
     url: `http://localhost:${PORT}/en`,
     reuseExistingServer: false,
     timeout: 600_000,

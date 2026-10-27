@@ -4,14 +4,14 @@ const pages = {
     meta: {
       title: "Taxi & chauffeur service in Lebanon",
       description:
-        "Book city rides, Beirut airport transfers and long-distance trips across Lebanon. See an upfront fare estimate and ride now or schedule ahead.",
+        "Book city rides, Beirut airport transfers and long-distance trips across Lebanon. Send your trip details on WhatsApp and our team will confirm your ride.",
     },
     hero: {
-      eyebrow: "Taxi & chauffeur service in Lebanon",
+      eyebrow: "Airport & tourism taxi in Lebanon",
       title: "Reliable rides, wherever Lebanon takes you.",
       subtitle:
-        "From Beirut airport to Byblos, Tripoli or the Bekaa — see your fare before you book, and ride now or schedule ahead.",
-      highlights: ["Upfront fare estimates", "Ride now or schedule ahead", "Book in Arabic or English"],
+        "From Beirut airport to Byblos, Tripoli or the Bekaa — send us your trip on WhatsApp and our team takes care of the rest.",
+      highlights: ["Book in minutes on WhatsApp", "Ride now or schedule ahead", "Arabic or English"],
     },
     services: {
       eyebrow: "Services",
@@ -29,14 +29,14 @@ const pages = {
       eyebrow: "Airport transfers",
       title: "Land in Beirut and head straight home",
       body: "Reserve your transfer to or from Beirut–Rafic Hariri International Airport in advance. Add your flight number and luggage so we can match the right vehicle.",
-      points: ["Reserve ahead for early or late flights", "Flight number captured with every booking", "Vehicles sized for your luggage"],
+      points: ["Reserve ahead for early or late flights", "Share your flight number when you book", "Vehicles sized for your luggage"],
       cta: "Book an airport transfer",
     },
     why: {
       eyebrow: "Why choose us",
       title: "Built around clarity and comfort",
       items: [
-        { title: "Upfront fare estimates", body: "See an estimated fare before you confirm — no meter guesswork." },
+        { title: "Quick replies on WhatsApp", body: "Send your trip details and our team confirms the ride and fare directly with you." },
         { title: "Professional standards", body: "Drivers and vehicles are expected to meet clear conduct, cleanliness and maintenance standards." },
         { title: "Ride now or later", body: "Request an immediate pickup or schedule a ride days in advance." },
         { title: "Arabic and English", body: "The whole booking experience works in both languages, right to left or left to right." },
@@ -46,9 +46,9 @@ const pages = {
       eyebrow: "How it works",
       title: "Booked in three simple steps",
       steps: [
-        { title: "Tell us where", body: "Choose pickup, destination and whether you need the ride now or later." },
-        { title: "Pick your ride", body: "Compare estimated fares across vehicle categories and choose one." },
-        { title: "Confirm and go", body: "Review the details, add notes for your driver and confirm." },
+        { title: "Fill in your trip", body: "Pickup, destination, date and time — it takes less than a minute." },
+        { title: "Send it on WhatsApp", body: "The form opens WhatsApp with your details ready — just press send." },
+        { title: "We confirm your ride", body: "Our team replies with availability and the fare, and arranges your driver." },
       ],
     },
     trust: {
@@ -63,7 +63,7 @@ const pages = {
     },
     cta: {
       title: "Ready when you are",
-      body: "Get a fare estimate now, or talk to our team about regular and corporate travel.",
+      body: "Send us your trip on WhatsApp, or talk to our team about regular and corporate travel.",
       primary: "Book a ride",
       secondary: "Contact us",
     },
@@ -87,7 +87,7 @@ const pages = {
     intro: {
       title: "Who we are",
       paragraphs: [
-        "Masar is a taxi and chauffeur service focused on doing the basics exceptionally well: arriving on time, pricing transparently, and treating every passenger with respect.",
+        "Zacks is an airport and tourism taxi service focused on doing the basics exceptionally well: arriving on time, pricing transparently, and treating every passenger with respect.",
         "We combine local knowledge of Lebanon's roads and neighbourhoods with modern booking tools, so getting a ride is as simple in Arabic as it is in English.",
       ],
       placeholderNotice: "Company history, founding date and operating figures will be added once confirmed.",
@@ -101,7 +101,7 @@ const pages = {
       title: "What we value",
       items: [
         { title: "Respect", body: "Courteous service for every passenger, whatever the trip." },
-        { title: "Transparency", body: "Clear estimates up front and honest communication if plans change." },
+        { title: "Transparency", body: "Fares agreed before you ride and honest communication if plans change." },
         { title: "Reliability", body: "Planning ahead so rides happen when they're supposed to." },
         { title: "Care", body: "Clean vehicles, careful driving and attention to the details." },
       ],
@@ -113,7 +113,7 @@ const pages = {
       items: [
         { title: "Driver standards", body: "Drivers are expected to hold the appropriate licences and follow a clear code of conduct." },
         { title: "Vehicle upkeep", body: "Vehicles are expected to be regularly maintained and cleaned between trips." },
-        { title: "Trip details shared", body: "Booking confirmations include your trip details and reference for peace of mind." },
+        { title: "Trip details confirmed", body: "Every ride is confirmed with you on WhatsApp, with all the trip details in one place." },
         { title: "Support when needed", body: "A team you can contact about any booking, before or after your ride." },
       ],
     },
@@ -138,8 +138,8 @@ const pages = {
       city: {
         title: "City transportation",
         summary: "Quick, comfortable rides around Beirut and Lebanon's main cities.",
-        body: "Whether it's a meeting in Downtown Beirut, dinner in Achrafieh or errands in Jounieh, request a ride now and see an estimate before you confirm.",
-        points: ["Immediate or scheduled pickup", "Upfront fare estimate", "Choose the vehicle category"],
+        body: "Whether it's a meeting in Downtown Beirut, dinner in Achrafieh or errands in Jounieh, send us your trip and we'll confirm the fare before you ride.",
+        points: ["Immediate or scheduled pickup", "Fare confirmed before you ride", "Choose the vehicle category"],
         cta: "Book a city ride",
       },
       airport: {
@@ -153,7 +153,7 @@ const pages = {
         title: "Scheduled rides",
         summary: "Book days ahead for early starts, appointments and events.",
         body: "Lock in a pickup time for the moments that matter — a hospital appointment, a wedding or an early flight.",
-        points: ["Book from 30 minutes to days ahead", "Notes for your driver", "Reference number for every booking"],
+        points: ["Book hours or days ahead", "Notes for your driver", "Confirmation on WhatsApp"],
         cta: "Schedule a ride",
       },
       corporate: {
@@ -166,8 +166,8 @@ const pages = {
       longDistance: {
         title: "Long-distance transportation",
         summary: "Intercity trips across Lebanon — north, south and into the Bekaa.",
-        body: "Travel to Tripoli, Byblos, Batroun, Sidon, Tyre, Zahle and beyond with an estimate agreed before you set off.",
-        points: ["Fare estimate before departure", "Spacious options for families", "Stops can be noted in advance"],
+        body: "Travel to Tripoli, Byblos, Batroun, Sidon, Tyre, Zahle and beyond with the fare agreed before you set off.",
+        points: ["Fare agreed before departure", "Spacious options for families", "Stops can be noted in advance"],
         cta: "Plan a long-distance trip",
       },
     },
@@ -187,8 +187,7 @@ const pages = {
     luggage: "Up to {count} medium bags",
     features: "Features",
     examples: "Example models",
-    from: "Estimates from",
-    note: "Vehicles shown are representative of each category; the exact model may vary. Fares shown are demo estimates.",
+    note: "Vehicles shown are representative of each category; the exact model may vary. Our team confirms the fare when you book.",
     helpTitle: "Not sure which to choose?",
     helpBody: "Tell us about your group and luggage and we'll recommend a category.",
     helpCta: "Contact us",
@@ -218,14 +217,14 @@ const pages = {
       vehicleColumn: "Vehicle",
       passengersColumn: "Passengers",
       luggageColumn: "Medium bags",
-      note: "Travelling with oversized items such as strollers, bicycles or sports equipment? Mention them in the driver notes or contact us before booking.",
+      note: "Travelling with oversized items such as strollers, bicycles or sports equipment? Mention them in the booking notes or contact us before booking.",
     },
     tips: {
       title: "Before you travel",
       items: [
         "For departures, allow extra time for traffic on the airport road at peak hours.",
-        "Double-check your flight number and terminal before confirming.",
-        "Keep your booking reference handy when meeting your driver.",
+        "Double-check your flight number before sending your request.",
+        "Keep your WhatsApp confirmation handy when meeting your driver.",
       ],
     },
   },
@@ -241,7 +240,6 @@ const pages = {
       subtitle: "Questions about a booking, corporate travel or feedback — reach out and our team will get back to you.",
     },
     channelsTitle: "Contact details",
-    channelsNotice: "These contact details are placeholders and will be replaced with verified business information.",
     phone: "Phone",
     whatsapp: "WhatsApp",
     email: "Email",
@@ -254,7 +252,7 @@ const pages = {
   faq: {
     meta: {
       title: "Frequently asked questions",
-      description: "Answers about booking, fares, payment, airport transfers and safety.",
+      description: "Answers about booking on WhatsApp, fares, payment, airport transfers and safety.",
     },
     hero: {
       eyebrow: "FAQ",
@@ -266,31 +264,31 @@ const pages = {
       {
         title: "Booking",
         items: [
-          { q: "How do I book a ride?", a: "Enter your pickup and destination, choose whether you need the ride now or at a later time, then compare estimated fares and confirm the vehicle category that suits you." },
-          { q: "How far in advance can I schedule a ride?", a: "Scheduled rides must be booked at least 30 minutes ahead. For airport transfers and early-morning trips we recommend booking as early as possible." },
-          { q: "Can I change or cancel my booking?", a: "Cancellation and change options will be shown in your booking details once accounts launch. Until then, contact us with your booking reference." },
+          { q: "How do I book a ride?", a: "Fill in the booking form with your pickup, destination, date and time, then press “Send on WhatsApp”. WhatsApp opens with your details ready to send, and our team replies to confirm your ride and the fare." },
+          { q: "How far in advance can I schedule a ride?", a: "Send your request as early as you can. For airport transfers and early-morning trips we recommend booking at least a day ahead." },
+          { q: "Can I change or cancel my booking?", a: "Yes — reply in the same WhatsApp conversation and our team will update or cancel your booking." },
         ],
       },
       {
         title: "Fares & payment",
         items: [
-          { q: "How is my fare calculated?", a: "Estimates are based on distance, typical travel time and vehicle category, plus any applicable fees such as airport or night rates. The estimate is shown before you confirm." },
-          { q: "Can the final fare differ from the estimate?", a: "It can, for example with significant waiting time, added stops or route changes requested during the trip." },
-          { q: "Which payment methods are accepted?", a: "Available payment methods are shown when you confirm your booking. The platform is designed to support cash, card and digital wallets; availability will be confirmed at launch." },
+          { q: "How much will my ride cost?", a: "Fares depend on the distance, the vehicle category and the time of day. Our team tells you the fare on WhatsApp before your ride is confirmed." },
+          { q: "Can the fare change after it is agreed?", a: "Only if the trip changes — for example significant waiting time, added stops or route changes requested during the ride." },
+          { q: "Which payment methods are accepted?", a: "Nothing is paid on the website. Our team confirms the accepted payment methods when they reply to your booking request." },
         ],
       },
       {
         title: "Airport transfers",
         items: [
           { q: "Why do you ask for my flight number?", a: "It helps your driver plan around your arrival or departure time." },
-          { q: "What if I have a lot of luggage?", a: "Choose a larger category such as Van, and mention oversized items in the notes for your driver." },
+          { q: "What if I have a lot of luggage?", a: "Choose a larger category such as Van, and mention oversized items in the booking notes." },
         ],
       },
       {
         title: "Safety & support",
         items: [
           { q: "Who are the drivers?", a: "Drivers are expected to hold the appropriate licences and follow our code of conduct. Full driver standards will be published at launch." },
-          { q: "How do I contact support?", a: "Use the contact form or the contact details on our Contact page, and include your booking reference if you have one." },
+          { q: "How do I contact support?", a: "Message us on WhatsApp, or use the contact form and details on our Contact page." },
         ],
       },
     ],
@@ -299,19 +297,13 @@ const pages = {
   book: {
     meta: {
       title: "Book a ride",
-      description: "Get an upfront fare estimate and book a taxi in Lebanon — now or scheduled.",
+      description: "Request a taxi in Lebanon on WhatsApp — now or scheduled. Our team confirms your ride and fare.",
     },
     hero: {
       eyebrow: "Book a ride",
       title: "Where can we take you?",
-      subtitle: "Choose your route, compare estimated fares and confirm in a few steps.",
+      subtitle: "Fill in your trip details and send them on WhatsApp. Our team will reply to confirm your ride and fare.",
     },
-  },
-
-  designSystem: {
-    meta: { title: "Design system", description: "Foundations and components of the platform." },
-    title: "Design system",
-    subtitle: "The foundations and components that make up the platform. Switch language to preview RTL.",
   },
 };
 

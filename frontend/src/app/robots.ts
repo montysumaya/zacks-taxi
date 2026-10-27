@@ -3,7 +3,7 @@ import { siteUrl } from "@/config/brand";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/", disallow: ["/en/design-system", "/ar/design-system", "/en/bookings/", "/ar/bookings/"] },
+    rules: { userAgent: "*", allow: "/" },
     sitemap: new URL("/sitemap.xml", siteUrl).toString(),
   };
 }

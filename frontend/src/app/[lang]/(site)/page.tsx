@@ -15,7 +15,7 @@ import { Eyebrow, Heading, Text } from "@/components/ui/typography";
 import { localizePath } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/get-dictionary";
 import { cn } from "@/lib/cn";
-import { getVehicleClasses } from "@/lib/data";
+import { vehicleClasses } from "@/config/fleet";
 import { pageMetadata } from "@/lib/metadata";
 
 export async function generateMetadata() {
@@ -29,7 +29,6 @@ export default async function HomePage() {
   const locale = await getLocale();
   const dict = await getDictionary(locale);
   const t = dict.pages.home;
-  const vehicleClasses = await getVehicleClasses();
   const href = (path: string) => localizePath(path, locale);
 
   return (

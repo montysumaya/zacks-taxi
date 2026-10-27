@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Container, Section } from "@/components/ui/layout";
 import { localizePath } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/get-dictionary";
-import { getVehicleClasses } from "@/lib/data";
+import { vehicleClasses } from "@/config/fleet";
 import { pageMetadata } from "@/lib/metadata";
 
 export async function generateMetadata() {
@@ -20,7 +20,6 @@ export default async function FleetPage() {
   const locale = await getLocale();
   const dict = await getDictionary(locale);
   const t = dict.pages.fleet;
-  const vehicleClasses = await getVehicleClasses();
 
   return (
     <>

@@ -6,7 +6,6 @@ import { Card } from "@/components/ui/card";
 import { localizePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { interpolate } from "@/i18n/interpolate";
-import { formatMoney } from "@/lib/format";
 import type { VehicleClassSummary } from "@/types";
 
 /** Vehicle category card. `detailed` adds features and example models (Fleet page). */
@@ -69,11 +68,7 @@ export function VehicleCard({
           </>
         )}
 
-        <div className="mt-auto flex items-end justify-between gap-3 border-t border-border pt-4">
-          <div className="flex flex-col">
-            <span className="text-xs text-muted-foreground">{t.from}</span>
-            <span className="text-h4 font-bold text-foreground tabular-nums">{formatMoney(summary.startingFare, locale)}</span>
-          </div>
+        <div className="mt-auto flex justify-end border-t border-border pt-4">
           <Link
             href={`${localizePath("/book", locale)}?class=${summary.vehicleClass}`}
             className={buttonStyles({ variant: "primary", size: "sm" })}
